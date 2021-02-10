@@ -23,26 +23,52 @@ namespace calcC
 
     public class Calculator
     {
-        public Calculator() { }
-
-        public double Add(double a, double b)
+        public Calculator()
         {
-            return a + b;
+            Accumulator = 0; }
+
+        public double Add(double a, double b) { return a + b; }
+        public double Subtract(double a, double b) { return a - b; }
+        public double Power(double a, double b) { return Math.Pow(a, b); }
+        public double Multiply(double a, double b) { return a * b; }
+        public double Divide(double a, double b) { return a / b; }
+
+        public double Accumulator { get; private set; }
+
+        public void Clear()
+        {
+            Accumulator = 0;
         }
 
-        public double Subtract(double a, double b)
+        public double Add(double addend)
         {
-            return a - b;
+            Accumulator += addend;
+            return Accumulator;
         }
 
-        public double Power(double a, double b)
+        public double Subtract(double subtractor)
         {
-            return Math.Pow(a, b);
+            Accumulator -= subtractor;
+            return Accumulator;
         }
 
-        public double Multiply(double a, double b)
+        public double Multiply(double multiplier)
         {
-            return a * b;
+            Accumulator *= multiplier;
+            return Accumulator;
         }
+
+        public double Divide(double divisor)
+        {
+            Accumulator /= divisor;
+            return Accumulator;
+        }
+
+        public double Power(double exponent)
+        {
+            Accumulator = Math.Pow(Accumulator, exponent);
+            return Accumulator;
+        }
+
     }
 }
