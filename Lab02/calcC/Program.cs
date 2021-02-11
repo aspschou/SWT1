@@ -23,51 +23,46 @@ namespace calcC
 
     public class Calculator
     {
-        public Calculator()
-        {
-            Accumulator = 0; }
+        public Calculator() { Accumulator = 0; }
 
-        public double Add(double a, double b) { return a + b; }
-        public double Subtract(double a, double b) { return a - b; }
-        public double Power(double a, double b) { return Math.Pow(a, b); }
-        public double Multiply(double a, double b) { return a * b; }
-        public double Divide(double a, double b) { return a / b; }
+        public double Add(double a, double b)
+        { return Accumulator = a + b; }
+
+        public double Subtract(double a, double b)
+        { return Accumulator = a - b; }
+
+        public double Power(double a, double b)
+        { return Accumulator = Math.Pow(a, b); }
+
+        public double Multiply(double a, double b)
+        { return Accumulator = a * b; }
+
+        public double Divide(double a, double b)
+        {
+            if(b==0)
+                throw new DivideByZeroException("Divided by zero");
+
+            return Accumulator = a / b;
+        }
 
         public double Accumulator { get; private set; }
 
         public void Clear()
-        {
-            Accumulator = 0;
-        }
+        { Accumulator = 0; }
 
         public double Add(double addend)
-        {
-            Accumulator += addend;
-            return Accumulator;
-        }
+        { return Accumulator += addend; }
 
         public double Subtract(double subtractor)
-        {
-            Accumulator -= subtractor;
-            return Accumulator;
-        }
+        { return Accumulator -= subtractor; }
 
         public double Multiply(double multiplier)
-        {
-            Accumulator *= multiplier;
-            return Accumulator;
-        }
+        { return Accumulator *= multiplier; }
 
         public double Divide(double divisor)
-        {
-            Accumulator /= divisor;
-            return Accumulator;
-        }
+        { return Accumulator /= divisor; }
 
         public double Power(double exponent)
-        {
-            Accumulator = Math.Pow(Accumulator, exponent);
-            return Accumulator;
-        }
+        { return Accumulator = Math.Pow(Accumulator, exponent); }
     }
 }
