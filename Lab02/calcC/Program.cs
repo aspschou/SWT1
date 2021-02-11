@@ -69,6 +69,5 @@ namespace calcC
             Accumulator = Math.Pow(Accumulator, exponent);
             return Accumulator;
         }
-0000
     }
 }
