@@ -1,2 +1,2 @@
 # SWT1
-Repository for SWT exercises
+Repository for SWT exercise 1 - Jenkins
