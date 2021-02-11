@@ -41,8 +41,8 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(-2, 3, -8)]
-        [TestCase(4,7,16384)]
         [TestCase(5, -3, 0.008)]
+        [TestCase(-5, 3.5, double.NaN)]
         public void PowerTest(double a, double b, double c)
         {
             // Arrange
