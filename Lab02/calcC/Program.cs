@@ -60,7 +60,13 @@ namespace calcC
         { return Accumulator *= multiplier; }
 
         public double Divide(double divisor)
-        { return Accumulator /= divisor; }
+        {
+
+            if (divisor == 0)
+                throw new DivideByZeroException("Divided by zero");
+
+            return Accumulator /= divisor; 
+        }
 
         public double Power(double exponent)
         { return Accumulator = Math.Pow(Accumulator, exponent); }
